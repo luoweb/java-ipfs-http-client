@@ -19,7 +19,7 @@ import io.ipfs.multiaddr.MultiAddress;
  *
  * ipfs pin rm `ipfs pin ls -qt recursive`
  *
- * ipfs --api=/ip4/127.0.0.1/tcp/5001 add -r src/test/resources/html
+ * ipfs --api=/ip4/127.0.0.1/tcp/32101 add -r src/test/resources/html
  *
  */
 public class SimpleAddTest {
@@ -30,7 +30,7 @@ public class SimpleAddTest {
         cids.put("html", "QmUQvDumYa8najL94EnGhmGobyMyNzAmCSpfAxYnYcQHZD");
     }
 
-    IPFS ipfs = new IPFS(new MultiAddress("/ip4/127.0.0.1/tcp/5001"));
+    IPFS ipfs = new IPFS(new MultiAddress("/ip4/127.0.0.1/tcp/32101"));
 
     @Test
     public void testSingle() throws Exception {

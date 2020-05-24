@@ -11,10 +11,10 @@ import io.ipfs.multiaddr.MultiAddress;
 
 public class RecursiveAddTest {
 
-    private final IPFS ipfs = new IPFS(new MultiAddress("/ip4/127.0.0.1/tcp/5001"));
-    
+    private final IPFS ipfs = new IPFS(new MultiAddress("/ip4/127.0.0.1/tcp/32101"));
+
     static Path TMPDATA = Paths.get("target/tmpdata");
-    
+
     @Test
     public void testAdd() throws Exception {
         System.out.println("ipfs version: " + ipfs.version());
@@ -39,7 +39,7 @@ public class RecursiveAddTest {
 
         Path base = TMPDATA.resolve("bindata");
         base.toFile().mkdirs();
-        byte[] bindata = new byte[1024*1024];
+        byte[] bindata = new byte[1024 * 1024];
         new Random(28).nextBytes(bindata);
         Files.write(base.resolve("data.bin"), bindata);
         Path js = base.resolve("js");
@@ -57,7 +57,7 @@ public class RecursiveAddTest {
 
         Path base = TMPDATA.resolve("largebindata");
         base.toFile().mkdirs();
-        byte[] bindata = new byte[100 * 1024*1024];
+        byte[] bindata = new byte[100 * 1024 * 1024];
         new Random(28).nextBytes(bindata);
         Files.write(base.resolve("data.bin"), bindata);
         new Random(496).nextBytes(bindata);
@@ -79,7 +79,7 @@ public class RecursiveAddTest {
         base.toFile().mkdirs();
         Path bindir = base.resolve("moredata");
         bindir.toFile().mkdirs();
-        byte[] bindata = new byte[100 * 1024*1024];
+        byte[] bindata = new byte[100 * 1024 * 1024];
         new Random(28).nextBytes(bindata);
         Files.write(bindir.resolve("data.bin"), bindata);
         new Random(496).nextBytes(bindata);
